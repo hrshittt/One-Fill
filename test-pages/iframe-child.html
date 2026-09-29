@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Embedded contact form</title>
+  <link rel="stylesheet" href="test-pages.css">
+  <style>main { box-shadow: none; min-height: 0; padding: 12px; }</style>
+</head>
+<body>
+  <main>
+    <form onsubmit="event.preventDefault()">
+      <div class="field"><label for="c-email">Email (inside iframe)</label><input id="c-email" type="email" name="email"></div>
+      <div class="field"><label for="c-phone">Phone (inside iframe)</label><input id="c-phone" type="tel" name="phone"></div>
+      <div class="field"><label for="c-company">Company (inside iframe)</label><input id="c-company" name="company"></div>
+    </form>
+  </main>
+</body>
+</html>

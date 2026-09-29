@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Web component form — Test page</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>Components Inc.</strong> · Shadow DOM</header>
+  <main>
+    <h1>Profile (web component)</h1>
+    <p class="hint">The form below is rendered inside an open shadow root, like Salesforce Lightning or Lit-based sites.</p>
+    <profile-form></profile-form>
+  </main>
+  <script>
+    customElements.define('profile-form', class extends HTMLElement {
+      connectedCallback() {
+        const root = this.attachShadow({ mode: 'open' });
+        root.innerHTML = `
+          <style>label{display:block;font:600 14px system-ui;margin:10px 0 4px} input{font:inherit;padding:7px 9px;border:1px solid #cbd5e1;border-radius:6px;width:280px}</style>
+          <label for="gn">Given name</label><input id="gn" name="givenName" autocomplete="given-name">
+          <label for="fn">Family name</label><input id="fn" name="familyName" autocomplete="family-name">
+          <label for="org">Organization</label><input id="org" name="organization">
+          <label for="zip">Postal code</label><input id="zip" name="postal">`;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "name": "one-fill",
+  "version": "0.1.0",
+  "private": true,
+  "description": "One-Fill — enter your information once, fill forms everywhere. A local-first smart autofill Chrome extension.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/build.mjs --watch",
+    "build": "npm run typecheck && node scripts/build.mjs --production",
+    "build:fast": "node scripts/build.mjs",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "node scripts/e2e.mjs",
+    "icons": "node scripts/generate-icons.mjs",
+    "serve:test-pages": "node scripts/serve-test-pages.mjs"
+  },
+  "engines": {
+    "node": ">=18.18"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.3.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "esbuild": "^0.28.2",
+    "jsdom": "^29.1.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.2",
+    "vue": "^3.5.43"
+  }
+}

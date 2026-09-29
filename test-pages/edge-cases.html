@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Edge cases — Test page</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>Edge cases</strong> · Things One-Fill must handle carefully</header>
+  <main>
+    <h1>Edge cases</h1>
+    <p class="hint">Hidden, disabled, read-only and honeypot fields must be ignored; passwords, OTPs and payment fields must never be filled; duplicates and masked inputs must work.</p>
+    <form onsubmit="event.preventDefault()">
+      <h2>Should be filled</h2>
+      <div class="field"><label for="e1">Email</label><input id="e1" type="email" name="email"></div>
+      <div class="field"><label for="e2">Confirm email</label><input id="e2" type="email" name="email_confirm"></div>
+      <div class="field"><label for="masked">Phone (auto-formatted)</label><input id="masked" name="phone" placeholder="98765 43210"></div>
+      <div class="field"><label for="dobd">Birth date</label><input id="dobd" type="date" name="birthdate"></div>
+      <div class="field"><label for="prefilled">City (already typed — should be kept)</label><input id="prefilled" name="city" value="Typed by me"></div>
+
+      <h2>Must be ignored</h2>
+      <input type="hidden" name="first_name" value="">
+      <div style="display:none"><label>First name (display:none)<input name="first_name_hidden"></label></div>
+      <div class="field"><label for="dis">Last name (disabled)</label><input id="dis" name="last_name" disabled></div>
+      <div class="field"><label for="ro">Middle name (read-only)</label><input id="ro" name="middle_name" readonly></div>
+      <div class="honeypot"><label>Website (honeypot)<input name="website_hp" tabindex="-1"></label></div>
+
+      <h2>Must never be filled</h2>
+      <div class="field"><label for="pw">Password</label><input id="pw" type="password" name="password"></div>
+      <div class="field"><label for="otp">One-time password</label><input id="otp" name="otp_code"></div>
+      <div class="field"><label for="cc">Card number</label><input id="cc" name="cardnumber" autocomplete="cc-number"></div>
+      <div class="field"><label for="acct">Bank account number</label><input id="acct" name="bank_account"></div>
+      <p><label><input type="checkbox" name="newsletter"> Subscribe to the newsletter</label></p>
+    </form>
+  </main>
+  <script>
+    const masked = document.getElementById('masked');
+    masked.addEventListener('input', () => {
+      const d = masked.value.replace(/\D/g, '').slice(0, 10);
+      masked.value = d.length > 5 ? d.slice(0, 5) + ' ' + d.slice(5) : d;
+    });
+  </script>
+</body>
+</html>

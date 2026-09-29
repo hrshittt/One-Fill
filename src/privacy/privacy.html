@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>One-Fill — Privacy</title>
+    <link rel="icon" href="../icons/icon-32.png" />
+    <link rel="stylesheet" href="privacy.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <img src="../icons/icon-128.png" alt="" width="56" height="56" />
+        <div>
+          <p class="eyebrow">Privacy policy</p>
+          <h1>Your information stays on your device.</h1>
+          <p class="lead">
+            One-Fill is a local-first autofill extension. There is no account, no server and no analytics.
+            This page explains exactly what One-Fill stores, what it can access, and what it never does.
+          </p>
+        </div>
+      </header>
+
+      <section class="grid">
+        <article class="card">
+          <h2>What One-Fill stores</h2>
+          <ul>
+            <li>The profile details you enter (name, contact, address, education, professional details, IDs, emergency contacts).</li>
+            <li>Resume files you upload, stored as files in the extension’s storage.</li>
+            <li>Your settings, and mapping corrections you confirm per website (a field fingerprint → which profile field it is — never a value).</li>
+            <li>Optional form history: website domain, page title, date and number of fields filled. <strong>Never</strong> the values you filled or full page URLs.</li>
+          </ul>
+          <p class="note">Everything is kept in <code>chrome.storage.local</code> on this device. Uninstalling the extension deletes it.</p>
+        </article>
+
+        <article class="card">
+          <h2>What One-Fill never does</h2>
+          <ul>
+            <li>Send your data to any server — One-Fill makes no network requests at all.</li>
+            <li>Use analytics, telemetry, crash reporting or advertising SDKs.</li>
+            <li>Share, sell or upload your profile.</li>
+            <li>Silently fill sensitive fields such as PAN, Aadhaar, passport, driving licence or voter ID.</li>
+            <li>Fill passwords, one-time codes, captchas, payment card or bank details, or tick consent boxes.</li>
+            <li>Log your profile values to the browser console.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h2>How pages are accessed</h2>
+          <p>
+            By default One-Fill can only read a page <strong>after you click its icon or press its shortcut</strong> (Chrome’s
+            <code>activeTab</code> permission). It then looks at the form fields on that page — labels, names and field types — to decide
+            what each field asks for. Values already typed into the page are not read, only whether a field is empty.
+          </p>
+          <p>
+            If you turn on <em>Detect forms as pages load</em> or <em>Auto-fill safe fields</em>, Chrome asks you to grant access to the
+            sites you visit. You can revoke it at any time from Settings or <code>chrome://extensions</code>.
+          </p>
+        </article>
+
+        <article class="card">
+          <h2>How your profile is protected</h2>
+          <ul>
+            <li>Storage is restricted to One-Fill’s own pages. Scripts running inside websites cannot read your profile.</li>
+            <li>A website only receives the specific values for the fields you choose to fill.</li>
+            <li>Sensitive values are masked in the popup and in the editor until you reveal them.</li>
+            <li>In-page messages are rendered in a closed shadow root and never display your data.</li>
+            <li>Exports exclude ID numbers unless you opt in, and can be encrypted with a password (AES-256-GCM).</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Permissions</h2>
+        <table>
+          <thead>
+            <tr><th>Permission</th><th>Why</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>storage</code></td><td>Keep your profiles, settings and history on this device.</td></tr>
+            <tr><td><code>activeTab</code></td><td>Access the current tab only when you invoke One-Fill.</td></tr>
+            <tr><td><code>scripting</code></td><td>Run the form detector and filler in that tab.</td></tr>
+            <tr><td>Site access <em>(optional)</em></td><td>Only if you enable page-load detection or safe auto-fill.</td></tr>
+          </tbody>
+        </table>
+        <p class="note">One-Fill does not request <code>tabs</code>, <code>history</code>, <code>bookmarks</code>, <code>cookies</code> or <code>downloads</code>.</p>
+      </section>
+
+      <section class="card">
+        <h2>Your controls</h2>
+        <p>
+          You can export, import or permanently delete all One-Fill data from <strong>Import &amp; export</strong> in the One-Fill
+          settings page, clear history at any time, and turn history off entirely.
+        </p>
+        <p class="note">Last updated: September 2026.</p>
+      </section>
+    </main>
+    <script src="privacy.js"></script>
+  </body>
+</html>

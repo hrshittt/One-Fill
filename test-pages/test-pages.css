@@ -1,0 +1,19 @@
+body { font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; margin: 0; color: #1f2937; background: #f8fafc; }
+header.site { background: #1e3a8a; color: #fff; padding: 12px 24px; }
+main { max-width: 820px; margin: 0 auto; padding: 24px; background: #fff; min-height: 100vh; box-shadow: 0 0 0 1px #e5e7eb; }
+h1 { font-size: 24px; margin: 0 0 4px; }
+h2 { font-size: 17px; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #e5e7eb; }
+.hint { color: #6b7280; margin-top: 0; }
+label { font-weight: 600; font-size: 14px; }
+input:not([type=radio]):not([type=checkbox]), select, textarea { font: inherit; padding: 7px 9px; border: 1px solid #cbd5e1; border-radius: 6px; min-width: 240px; box-sizing: border-box; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 12px; }
+.field { display: flex; flex-direction: column; gap: 4px; margin-bottom: 12px; }
+table.grid { border-collapse: collapse; width: 100%; }
+table.grid td { padding: 6px 8px; border: 1px solid #e5e7eb; }
+table.grid td:first-child { width: 38%; background: #f9fafb; font-weight: 600; font-size: 14px; }
+.req { color: #dc2626; }
+.captcha { font-family: monospace; letter-spacing: 3px; background: #e0e7ff; padding: 4px 8px; text-decoration: line-through; }
+button { font: inherit; padding: 9px 18px; border-radius: 8px; border: 0; background: #2563eb; color: #fff; cursor: pointer; }
+.state { font-family: ui-monospace, monospace; font-size: 12px; background: #0f172a; color: #e2e8f0; padding: 12px; border-radius: 8px; white-space: pre-wrap; }
+.ok { color: #059669; font-weight: 600; }
+.honeypot { position: absolute; left: -9999px; }

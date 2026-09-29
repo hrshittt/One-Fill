@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>University Admission Form 2026 — Test page</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>State University</strong> · Online Admission Portal</header>
+  <main>
+    <h1>Undergraduate Admission Form 2026</h1>
+    <p class="hint">A government-portal style form: ASP.NET names, table layouts, split date dropdowns and 10th/12th sections.</p>
+
+    <form id="aspnetForm" method="post" onsubmit="event.preventDefault(); alert('Submitted (test page)');">
+      <h2>Personal Details</h2>
+      <table class="grid">
+        <tr><td>Candidate's Name <span class="req">*</span></td><td><input name="ctl00$ContentPlaceHolder1$txtCandidateName" id="ctl00_ContentPlaceHolder1_txtCandidateName"></td></tr>
+        <tr><td>Father's Name <span class="req">*</span></td><td><input name="ctl00$ContentPlaceHolder1$txtFatherName"></td></tr>
+        <tr><td>Mother's Name <span class="req">*</span></td><td><input name="ctl00$ContentPlaceHolder1$txtMotherName"></td></tr>
+        <tr>
+          <td>Date of Birth <span class="req">*</span></td>
+          <td>
+            <select name="ctl00$ContentPlaceHolder1$ddlDobDay"><option value="0">DD</option></select>
+            <select name="ctl00$ContentPlaceHolder1$ddlDobMonth"><option value="0">MM</option><option>January</option><option>February</option><option>March</option><option>April</option><option>May</option><option>June</option><option>July</option><option>August</option><option>September</option><option>October</option><option>November</option><option>December</option></select>
+            <select name="ctl00$ContentPlaceHolder1$ddlDobYear"><option value="0">YYYY</option></select>
+          </td>
+        </tr>
+        <tr>
+          <td>Gender <span class="req">*</span></td>
+          <td>
+            <input type="radio" name="ctl00$ContentPlaceHolder1$rblGender" id="g1" value="1"><label for="g1">Male</label>
+            <input type="radio" name="ctl00$ContentPlaceHolder1$rblGender" id="g2" value="2"><label for="g2">Female</label>
+            <input type="radio" name="ctl00$ContentPlaceHolder1$rblGender" id="g3" value="3"><label for="g3">Transgender</label>
+          </td>
+        </tr>
+        <tr><td>Category</td><td><select name="ctl00$ContentPlaceHolder1$ddlCategory"><option>--Select--</option><option>General</option><option>OBC</option><option>SC</option><option>ST</option><option>EWS</option></select></td></tr>
+        <tr><td>Nationality</td><td><select name="ctl00$ContentPlaceHolder1$ddlNationality"><option>--Select--</option><option>Indian</option><option>NRI</option><option>Foreign National</option></select></td></tr>
+        <tr><td>Mobile No. <span class="req">*</span></td><td><input name="ctl00$ContentPlaceHolder1$txtMobileNo" maxlength="10"></td></tr>
+        <tr><td>E-mail ID <span class="req">*</span></td><td><input name="ctl00$ContentPlaceHolder1$txtEmail"></td></tr>
+        <tr><td>Aadhaar No.</td><td><input name="ctl00$ContentPlaceHolder1$txtAadhaar" maxlength="12"></td></tr>
+      </table>
+
+      <h2>Permanent Address</h2>
+      <table class="grid">
+        <tr><td>Address</td><td><textarea name="ctl00$ContentPlaceHolder1$txtPermAddress" rows="3"></textarea></td></tr>
+        <tr><td>City / Town</td><td><input name="ctl00$ContentPlaceHolder1$txtPermCity"></td></tr>
+        <tr><td>State</td><td><select name="ctl00$ContentPlaceHolder1$ddlPermState" id="state"></select></td></tr>
+        <tr><td>Pin Code</td><td><input name="ctl00$ContentPlaceHolder1$txtPermPin" maxlength="6"></td></tr>
+      </table>
+
+      <h2>Class X Details</h2>
+      <table class="grid">
+        <tr><td>Board</td><td><input name="ctl00$ContentPlaceHolder1$txt10Board"></td></tr>
+        <tr><td>Roll Number</td><td><input name="ctl00$ContentPlaceHolder1$txt10Roll"></td></tr>
+        <tr><td>Year of Passing</td><td><input name="ctl00$ContentPlaceHolder1$txt10Year" maxlength="4"></td></tr>
+        <tr><td>Percentage (%)</td><td><input name="ctl00$ContentPlaceHolder1$txt10Percent"></td></tr>
+      </table>
+
+      <h2>Class XII Details</h2>
+      <table class="grid">
+        <tr><td>Board</td><td><input name="ctl00$ContentPlaceHolder1$txt12Board"></td></tr>
+        <tr><td>School Name</td><td><input name="ctl00$ContentPlaceHolder1$txt12School"></td></tr>
+        <tr><td>Year of Passing</td><td><input name="ctl00$ContentPlaceHolder1$txt12Year" maxlength="4"></td></tr>
+        <tr><td>Percentage (%)</td><td><input name="ctl00$ContentPlaceHolder1$txt12Percent"></td></tr>
+      </table>
+
+      <h2>Emergency Contact</h2>
+      <table class="grid">
+        <tr><td>Name</td><td><input name="ctl00$ContentPlaceHolder1$txtEmergName"></td></tr>
+        <tr><td>Relation</td><td><input name="ctl00$ContentPlaceHolder1$txtEmergRelation"></td></tr>
+        <tr><td>Contact Number</td><td><input name="ctl00$ContentPlaceHolder1$txtEmergPhone"></td></tr>
+      </table>
+
+      <h2>Verification</h2>
+      <table class="grid">
+        <tr><td>Enter Captcha</td><td><input name="ctl00$ContentPlaceHolder1$txtCaptcha"> <span class="captcha">7G4kQ</span></td></tr>
+      </table>
+      <p><label><input type="checkbox" name="ctl00$ContentPlaceHolder1$chkDeclaration"> I hereby declare that the information given above is true to the best of my knowledge.</label></p>
+      <p><button type="submit">Submit Application</button></p>
+    </form>
+  </main>
+  <script src="university-admission.js"></script>
+</body>
+</html>

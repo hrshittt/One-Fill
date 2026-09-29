@@ -1,0 +1,13 @@
+node_modules/
+dist/
+dist-e2e/
+test-pages/dist/
+e2e-output/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+*.zip
+# Profile exports may contain personal data — never commit them.
+one-fill-*.json
+!package.json

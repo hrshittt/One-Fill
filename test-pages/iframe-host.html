@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Embedded form — Test page</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>Host page</strong> · Form inside an iframe</header>
+  <main>
+    <h1>Newsletter & contact</h1>
+    <p class="hint">The top page has one field; the rest of the form lives in a same-origin iframe. One-Fill scans every frame it is allowed to access.</p>
+    <div class="field"><label for="host-name">Your name (top frame)</label><input id="host-name" name="name"></div>
+    <iframe src="iframe-child.html" title="Embedded contact form" style="width:100%;height:340px;border:1px solid #e5e7eb;border-radius:8px"></iframe>
+  </main>
+</body>
+</html>

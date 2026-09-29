@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Software Engineer — Acme Careers</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>Acme Careers</strong> · Software Engineer, Platform</header>
+  <main>
+    <h1>Apply for this job</h1>
+    <p class="hint">Applicant-tracking style form: autocomplete attributes, a separate country-code select, resume upload, EEO questions and consent.</p>
+    <form id="application" onsubmit="event.preventDefault(); alert('Submitted (test page)');">
+      <div class="row">
+        <div class="field"><label for="first_name">First Name *</label><input id="first_name" name="job_application[first_name]" autocomplete="given-name" required></div>
+        <div class="field"><label for="last_name">Last Name *</label><input id="last_name" name="job_application[last_name]" autocomplete="family-name" required></div>
+      </div>
+      <div class="field"><label for="email">Email *</label><input id="email" type="email" name="job_application[email]" autocomplete="email" required></div>
+      <div class="row">
+        <div class="field">
+          <label for="phone_country">Country</label>
+          <select id="phone_country" name="job_application[phone_country]">
+            <option value="">Select…</option>
+            <option value="US">United States (+1)</option>
+            <option value="CA">Canada (+1)</option>
+            <option value="GB">United Kingdom (+44)</option>
+            <option value="IN">India (+91)</option>
+            <option value="SG">Singapore (+65)</option>
+          </select>
+        </div>
+        <div class="field"><label for="phone">Phone</label><input id="phone" type="tel" name="job_application[phone]" autocomplete="tel-national"></div>
+      </div>
+      <div class="field"><label for="location">Location (City)</label><input id="location" name="job_application[location]" placeholder="Start typing…"></div>
+
+      <h2>Resume / CV</h2>
+      <div class="field"><label for="resume">Attach Resume/CV *</label><input id="resume" type="file" name="job_application[resume]" accept=".pdf,.doc,.docx"></div>
+      <div class="field"><label for="cover_letter">Cover Letter</label><textarea id="cover_letter" name="job_application[cover_letter_text]" rows="5"></textarea></div>
+
+      <h2>Links</h2>
+      <div class="field"><label for="linkedin">LinkedIn Profile</label><input id="linkedin" type="url" name="job_application[answers][linkedin]"></div>
+      <div class="field"><label for="github">GitHub</label><input id="github" type="url" name="job_application[answers][github]"></div>
+      <div class="field"><label for="website">Website</label><input id="website" type="url" name="job_application[answers][website]"></div>
+
+      <h2>Education</h2>
+      <div class="field"><label for="school">School</label><input id="school" name="education[school_name]"></div>
+      <div class="row">
+        <div class="field"><label for="degree">Degree</label><select id="degree" name="education[degree]"><option value="">Select…</option><option>High School</option><option>Associate's Degree</option><option>Bachelor's Degree</option><option>Master's Degree</option><option>Doctorate</option></select></div>
+        <div class="field"><label for="discipline">Discipline</label><input id="discipline" name="education[discipline]"></div>
+      </div>
+
+      <h2>Experience</h2>
+      <div class="row">
+        <div class="field"><label for="company">Current Company</label><input id="company" name="current_company" autocomplete="organization"></div>
+        <div class="field"><label for="title">Current Title</label><input id="title" name="current_title" autocomplete="organization-title"></div>
+      </div>
+      <div class="field"><label for="yoe">Years of experience</label><select id="yoe" name="years_of_experience"><option value="">Select…</option><option>Less than 1 year</option><option>1-3 years</option><option>3-5 years</option><option>5+ years</option></select></div>
+      <fieldset>
+        <legend>Are you legally authorized to work in the country of the job?</legend>
+        <label><input type="radio" name="work_auth" value="yes"> Yes</label>
+        <label><input type="radio" name="work_auth" value="no"> No</label>
+      </fieldset>
+      <div class="field"><label for="hear">How did you hear about us?</label><input id="hear" name="referral_source"></div>
+
+      <h2>Voluntary Self-Identification</h2>
+      <div class="field"><label for="gender">Gender</label><select id="gender" name="eeo[gender]"><option value="">Please select</option><option>Male</option><option>Female</option><option>Decline To Self Identify</option></select></div>
+
+      <p><label><input type="checkbox" name="gdpr_consent"> I consent to Acme processing my data according to the privacy policy.</label></p>
+      <p><button type="submit">Submit Application</button></p>
+    </form>
+  </main>
+</body>
+</html>

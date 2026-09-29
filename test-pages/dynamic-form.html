@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Multi-step signup — Test page</title>
+  <link rel="stylesheet" href="test-pages.css">
+</head>
+<body>
+  <header class="site"><strong>StepForm</strong> · Dynamic form</header>
+  <main>
+    <h1>Create your account</h1>
+    <p class="hint">Fields appear after load, step 2 appears on “Next”, and the State list loads only after a Country is chosen (a cascading dropdown).</p>
+    <form id="signup" onsubmit="event.preventDefault()">
+      <section id="step1">
+        <h2>Step 1 — About you</h2>
+        <div class="field"><label for="full">Full name</label><input id="full" name="fullName"></div>
+        <div id="late"></div>
+        <button type="button" id="next">Next →</button>
+      </section>
+      <section id="step2" hidden>
+        <h2>Step 2 — Where you live</h2>
+        <div class="field"><label for="country">Country</label>
+          <select id="country" name="country"><option value="">Choose a country</option><option value="IN">India</option><option value="US">United States</option></select></div>
+        <div class="field"><label for="state">State</label><select id="state" name="state"><option value="">Choose a country first</option></select></div>
+        <div class="field"><label for="city">City</label><input id="city" name="city"></div>
+      </section>
+    </form>
+  </main>
+  <script>
+    // Fields injected after load, like a SPA rendering asynchronously.
+    setTimeout(() => {
+      document.getElementById('late').innerHTML =
+        '<div class="field"><label for="em">Email address</label><input id="em" type="email" name="email"></div>' +
+        '<div class="field"><label for="ph">Mobile number</label><input id="ph" type="tel" name="mobile"></div>';
+    }, 800);
+    document.getElementById('next').addEventListener('click', () => { document.getElementById('step2').hidden = false; });
+    const STATES = { IN: ['Karnataka', 'Maharashtra', 'Rajasthan', 'Tamil Nadu'], US: ['California', 'New York', 'Texas'] };
+    document.getElementById('country').addEventListener('change', (e) => {
+      const state = document.getElementById('state');
+      state.innerHTML = '<option value="">Loading…</option>';
+      setTimeout(() => {
+        state.innerHTML = '<option value="">Select state</option>' + (STATES[e.target.value] || []).map((s) => `<option>${s}</option>`).join('');
+      }, 300);
+    });
+  </script>
+</body>
+</html>
